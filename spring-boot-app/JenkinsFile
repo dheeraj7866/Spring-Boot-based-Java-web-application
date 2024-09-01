@@ -2,7 +2,7 @@ pipeline {
   agent {
     docker 
     {
-      image '${DOCKER_USERNAME}/${DOCKER_IMAGE}:${DOCKER_TAG}'
+      image 'dheerajkr7866/spring-image:1'
       args '--user root -v /var/run/docker.sock:/var/run/docker.sock' // mount Docker socket to access the host's Docker daemon
     }
   }
@@ -62,7 +62,7 @@ pipeline {
                     // Build the Docker image
                     sh "cd spring-boot-app/"
                     sh "pwd"
-                    sh "cd spring-boot-app/ && docker build -t ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${DOCKER_TAG} ."
+                    sh "cd spring-boot-app/ && docker build -t ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${params.DOCKER_TAG} ."
                 }
             }
         }
