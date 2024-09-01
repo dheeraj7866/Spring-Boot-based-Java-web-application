@@ -62,7 +62,7 @@ pipeline {
                     // Build the Docker image
                     sh "cd spring-boot-app/"
                     sh "pwd"
-                    sh "docker build -t ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${DOCKER_TAG} -f /var/lib/jenkins/workspace/java-based-pipeline/spring-boot-app ."
+                    sh "docker build -t ${DOCKER_USERNAME}/${DOCKER_IMAGE}:${DOCKER_TAG} -f /var/lib/jenkins/workspace/java-based-pipeline/spring-boot-app/ ."
                 }
             }
         }
